@@ -14,6 +14,7 @@ spring:
 server:
   port: 8442 # Utilisez un autre port si vous avez les deux applications sur la même machine
   ssl:
+    enabled: false
     key-store: classpath:BmwBackKeystore.jks # Chemin vers le keystore
     key-store-password: PAPA31032014 # Mot de passe du keystore
     key-store-type: JKS  # Type de keystore

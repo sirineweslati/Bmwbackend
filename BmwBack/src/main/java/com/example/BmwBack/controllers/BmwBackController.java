@@ -1,19 +1,40 @@
 package com.example.BmwBack.controllers;
 
+
 import com.example.BmwBack.entities.Client;
 import com.example.BmwBack.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.Map;
+
 @RestController
+@RequestMapping("/bmwback")
 public class BmwBackController {
 
+    @Autowired
+    private ClientRepository clientRepository;
 
-    @GetMapping("/health")
-    public ResponseEntity<String> healthCheck() {
-        return ResponseEntity.ok("BmwBack is running!");
+
+    @GetMapping("/check-number")
+    public ResponseEntity<Map<String, Boolean>> checkNumber(@RequestParam String number) {
+
+
+
+
+        // Utiliser findByNumber pour vérifier si le client existe
+        Client client = clientRepository.findByNumber(number);
+
+        // Vérifier si le client est null
+        boolean exists = (client != null);
+
+
+        // Retourner la réponse avec le booléen
+        return ResponseEntity.ok(Map.of("exists", exists));
     }
+
+
 }
+
+
+
