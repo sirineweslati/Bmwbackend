@@ -10,9 +10,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
+  profiles:
+    default: dev
 server:
-  port: 8441 # Utilisez un autre port si vous avez les deux applications sur la même machine
+  port: 8441
 
 
 
