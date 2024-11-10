@@ -12,7 +12,7 @@ spring:
         format_sql: true
 
 server:
-  port: 8442 # Utilisez un autre port si vous avez les deux applications sur la même machine
+  port: 8441 # Utilisez un autre port si vous avez les deux applications sur la même machine
   ssl:
     enabled: false
     key-store: classpath:BmwBackKeystore.jks # Chemin vers le keystore
