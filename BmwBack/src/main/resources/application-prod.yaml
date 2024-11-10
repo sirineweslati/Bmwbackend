@@ -1,0 +1,9 @@
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:BmwBackKeystore.jks # Chemin vers le keystore
+    key-store-password: PAPA31032014 # Mot de passe du keystore
+    key-store-type: JKS  # Type de keystore
+    key-alias: BmwBack # Alias du keystore
+    trust-store: classpath:esimTrustStore.jks
+    trust-store-password: PAPA31032014
